@@ -4,7 +4,6 @@ use blog::posts;
 use blog;
 
 use rocket::*;
-// use rocket_contrib::json::Json;
 
 #[get("/")]
 fn index() -> &'static str {
