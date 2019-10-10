@@ -6,9 +6,13 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "blog"
+path = "api/src/lib.rs"
+
 [[bin]]
 name = "main"
-path = "src/bin/main.rs"
+path = "api/src/bin/main.rs"
 
 [dependencies]
 rocket = "0.4.2"
