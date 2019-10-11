@@ -9,11 +9,15 @@
     "build-prod": "webpack --env.production",
     "watch": "webpack --watch",
     "start": "webpack-dev-server",
-    "pretty": "prettier --write \"frontend/src/**/*.{js,jsx}\" && cargo fmt",
-    "precommit": "lint-staged && npm test"
+    "pretty": "prettier --write \"frontend/src/**/*.{js,jsx}\" && cargo fmt"
   },
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
   "lint-staged": {
     "*.js": [
         "npm run pretty",
