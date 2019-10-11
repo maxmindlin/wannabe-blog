@@ -1,0 +1,13 @@
+body {
+  font-family: monospace;
+}
+
+.link:hover {
+  color: #1f94ce;
+}
+
+.link {
+  color: #155474;
+  cursor: pointer;
+}
+  

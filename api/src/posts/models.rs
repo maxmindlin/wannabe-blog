@@ -10,6 +10,7 @@ pub struct Post {
     pub title: String,
     pub content: String,
     pub published: bool,
+    pub tags: Vec<String>,
 }
 
 impl Post {
@@ -21,7 +22,8 @@ impl Post {
                     id,
                     title,
                     content,
-                    published
+                    published,
+                    tags
                 )
             )
             .order(id.desc())
@@ -37,7 +39,8 @@ impl Post {
                     id, 
                     title, 
                     content, 
-                    published
+                    published,
+                    tags
                 )
             )
             .first::<Post>(conn)
@@ -58,4 +61,5 @@ pub struct NewPost {
     pub user_id: i32,
     pub title: String,
     pub content: String,
+    pub tags: Option<Vec<String>>
 }

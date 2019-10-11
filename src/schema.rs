@@ -5,7 +5,7 @@ table! {
         title -> Varchar,
         content -> Text,
         published -> Bool,
-        tags -> Array<Text>,
+        tags -> Nullable<Array<Text>>,
     }
 }
 
