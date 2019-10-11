@@ -11,8 +11,8 @@ fn all(conn: DbConn) -> Json<Vec<Post>> {
     Json(Post::all(&conn))
 }
 
-#[get("/show/<post_id>")]
-fn show(post_id: i32, conn: DbConn) -> Json<Post> {
+#[get("/<post_id>")]
+fn fetch(post_id: i32, conn: DbConn) -> Json<Post> {
     Json(Post::find(post_id, &conn))
 }
 
@@ -23,5 +23,5 @@ fn new(body: Json<NewPost>, conn: DbConn) -> JsonValue {
 }
 
 pub fn routes() -> Vec<rocket::Route> {
-    routes![all, show, new]
+    routes![all, fetch, new]
 }

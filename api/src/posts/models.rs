@@ -32,6 +32,16 @@ impl Post {
             .expect("Error loading post")
     }
 
+    // Query for all posts with a given array of tags
+    pub fn find_tag(target_tags: Vec<String>, conn: &PgConnection) -> Vec<Post> {
+        posts
+            .select((id, title, content, published, tags))
+            .filter(tags.contains(target_tags))
+            .order(id.desc())
+            .get_results::<Post>(conn)
+            .expect("Error finding posts")
+    }
+
     // Create a new unpublished post
     pub fn insert(post: NewPost, conn: &PgConnection) -> QueryResult<usize> {
         diesel::insert_into(posts::table)
