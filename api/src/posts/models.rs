@@ -17,15 +17,7 @@ impl Post {
     // Return all posts stored
     pub fn all(conn: &PgConnection) -> Vec<Post> {
         posts
-            .select(
-                (
-                    id,
-                    title,
-                    content,
-                    published,
-                    tags
-                )
-            )
+            .select((id, title, content, published, tags))
             .order(id.desc())
             .get_results::<Post>(conn)
             .expect("Error loading posts")
@@ -33,16 +25,9 @@ impl Post {
 
     // Query for a single result by id
     pub fn find(post_id: i32, conn: &PgConnection) -> Post {
-        posts.find(post_id)
-            .select(
-                (
-                    id, 
-                    title, 
-                    content, 
-                    published,
-                    tags
-                )
-            )
+        posts
+            .find(post_id)
+            .select((id, title, content, published, tags))
             .first::<Post>(conn)
             .expect("Error loading post")
     }
@@ -56,10 +41,10 @@ impl Post {
 }
 
 #[derive(Debug, Insertable, Serialize, Deserialize)]
-#[table_name="posts"]
+#[table_name = "posts"]
 pub struct NewPost {
     pub user_id: i32,
     pub title: String,
     pub content: String,
-    pub tags: Option<Vec<String>>
+    pub tags: Option<Vec<String>>,
 }

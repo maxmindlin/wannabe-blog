@@ -3,8 +3,8 @@
 use rocket::*;
 use rocket_contrib::json::{Json, JsonValue};
 
-use crate:: DbConn;
-use crate::posts::models::{Post, NewPost};
+use crate::posts::models::{NewPost, Post};
+use crate::DbConn;
 
 #[get("/")]
 fn all(conn: DbConn) -> Json<Vec<Post>> {

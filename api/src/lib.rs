@@ -1,20 +1,23 @@
 #![feature(proc_macro_hygiene, decl_macro)]
-#[macro_use] extern crate diesel;
-#[macro_use] extern crate rocket_contrib;
-#[macro_use] extern crate serde_derive;
+#[macro_use]
+extern crate diesel;
+#[macro_use]
+extern crate rocket_contrib;
+#[macro_use]
+extern crate serde_derive;
 
-pub mod schema;
 pub mod posts;
+pub mod schema;
 
-use dotenv::dotenv;
 use diesel::pg::PgConnection;
-use std::env;
-use std::ops::Deref;
+use dotenv::dotenv;
 use r2d2;
 use r2d2_diesel::ConnectionManager;
-use rocket::{Outcome, Request, State};
 use rocket::http::Status;
 use rocket::request::{self, FromRequest};
+use rocket::{Outcome, Request, State};
+use std::env;
+use std::ops::Deref;
 
 type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
 

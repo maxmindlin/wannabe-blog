@@ -4,14 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "webpack",
     "build-prod": "webpack --env.production",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "pretty": "prettier --write \"frontend/src/**/*.{js,jsx}\" && cargo fmt",
+    "precommit": "lint-staged && npm test"
   },
   "author": "",
   "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+        "npm run pretty",
+        "git add"
+    ]
+  },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
@@ -44,6 +52,7 @@
     "css-loader": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.3.1",
+    "lint-staged": "^9.4.2",
     "prettier": "1.16.4",
     "pretty-quick": "^1.10.0",
     "style-loader": "^0.23.1",

@@ -1,7 +1,7 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 #![feature(plugin)]
-use blog::posts;
 use blog;
+use blog::posts;
 
 use rocket::*;
 

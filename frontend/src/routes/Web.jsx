@@ -9,6 +9,6 @@ const Web = () => (
     <Route exact path="/" component={Home} />
     <Route component={Missing404} />
   </Switch>
-)
+);
 
 export default Web;

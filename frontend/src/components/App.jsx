@@ -11,21 +11,23 @@ import Web from '../routes/Web';
 import '../style/app.css';
 
 const App = () => (
-    <Router>
-      <div style={{ margin: '25px 200px' }}>
-        <Header />
-        <div style={{
+  <Router>
+    <div style={{ margin: '25px 200px' }}>
+      <Header />
+      <div
+        style={{
           borderTop: 'solid black 3px',
           borderBottom: 'solid black 3px',
           paddingTop: 20,
           paddingBottom: 20,
           marginBottom: 10
-        }}>
-          <Web/>
-        </div>
-        <Footer />
+        }}
+      >
+        <Web />
       </div>
-    </Router>
-  );
-  
-  export default hot(App);
+      <Footer />
+    </div>
+  </Router>
+);
+
+export default hot(App);
