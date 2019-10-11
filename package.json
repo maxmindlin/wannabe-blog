@@ -9,19 +9,23 @@
     "build-prod": "webpack --env.production",
     "watch": "webpack --watch",
     "start": "webpack-dev-server",
-    "pretty": "prettier --write \"frontend/src/**/*.{js,jsx}\" && cargo fmt"
+    "pretty-js": "prettier --write \"frontend/src/**/*.{js,jsx,ts,tsx}\""
   },
   "author": "",
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.js": [
-        "npm run pretty",
-        "git add"
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "npm run pretty-js",
+      "git add"
+    ],
+    "*.rs": [
+      "cargo fmt",
+      "git add"
     ]
   },
   "dependencies": {
@@ -51,6 +55,9 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-transform-async-to-generator": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-router-dom": "^5.1.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^2.1.0",
@@ -59,7 +66,10 @@
     "lint-staged": "^9.4.2",
     "prettier": "1.16.4",
     "pretty-quick": "^1.10.0",
+    "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.4",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.2.1"

@@ -1,8 +1,14 @@
 import React from 'react';
 
-const Link = ({ href, children, style }) => (
+interface LinkProps {
+  href: string;
+}
+
+const Link: React.FC<LinkProps> = ({ href, children }) => (
   <span
-    style={style}
+    style={{
+      fontSize: 10
+    }}
     className="link"
     onClick={() => {
       window.open(href, '_blank');

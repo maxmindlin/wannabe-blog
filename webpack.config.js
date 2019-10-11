@@ -19,6 +19,15 @@ module.exports = (env = {}) => {
     module: {
       rules: [
         {
+          test: /\.ts(x?)$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'ts-loader'
+            }
+          ]
+        },
+        {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           use: 'babel-loader'
@@ -26,6 +35,11 @@ module.exports = (env = {}) => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader']
+        },
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          loader: 'source-map-loader'
         }
       ]
     },
@@ -39,14 +53,14 @@ module.exports = (env = {}) => {
       new Dotenv(),
       new HtmlWebpackPlugin({
         template: `${srcDir}/index.html`,
-        favicon: `${srcDir}/assets/favicon.ico`,
+        favicon: `${srcDir}/assets/favicon.ico`
       })
     ],
     resolve: {
       alias: {
         'react-dom': '@hot-loader/react-dom'
       },
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }
   };
 

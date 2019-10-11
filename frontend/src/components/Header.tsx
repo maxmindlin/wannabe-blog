@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Link from '../components/Link';
+import Link from './Link';
 
 const Header = () => (
   <div
@@ -20,15 +20,9 @@ const Header = () => (
     >
       a blog for the 1x developer
     </span>
-    <Link
-      href="https://github.com/maxmindlin/wannabe-blog"
-      style={{
-        fontSize: 10,
-        marginLeft: 'auto'
-      }}
-    >
-      source code
-    </Link>
+    <span style={{ marginLeft: 'auto' }}>
+      <Link href="https://github.com/maxmindlin/wannabe-blog">source code</Link>
+    </span>
   </div>
 );
 

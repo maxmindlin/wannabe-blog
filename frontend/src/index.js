@@ -19,6 +19,6 @@ console.log(`
                        
                        
 
-Hey YOU. What are you looking for? Thats not very 1x of you.`)
+Hey YOU. What are you looking for? Thats not very 1x of you.`);
 
 ReactDOM.render(<App />, document.getElementById('app'));
