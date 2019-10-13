@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Link from './Link';
-
 const Footer = () => (
   <div
     style={{
@@ -12,7 +10,9 @@ const Footer = () => (
   >
     <div>
       <span style={{ paddingRight: 8 }}>Github: </span>
-      <Link href="https://github.com/maxmindlin">maxmindlin</Link>
+      <a href="https://github.com/maxmindlin" target="_blank">
+        maxmindlin
+      </a>
     </div>
     <span style={{ padding: '0 10px 0 10px' }}>|</span>
     <div>

@@ -1,0 +1,1 @@
+AlTER TABLE posts ADD COLUMN preview TEXT not null default '';

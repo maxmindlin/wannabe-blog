@@ -1,0 +1,1 @@
+ALTER TABLE posts ADD COLUMN date_published TIMESTAMP with time zone default null;

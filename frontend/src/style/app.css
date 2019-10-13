@@ -1,13 +1,35 @@
 body {
   font-family: monospace;
+  background-color: #f4f4f4;
 }
 
-.link:hover {
+a:hover {
   color: #1f94ce;
 }
 
-.link {
+a {
   color: #155474;
   cursor: pointer;
+  text-decoration: none;
 }
-  
+
+.wannabeTitle {
+  cursor: pointer;
+}
+
+.topicTag:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+.textBody {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.postPreview {
+  background: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
