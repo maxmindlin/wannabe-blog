@@ -6,9 +6,7 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const srcDir = path.resolve(__dirname, 'frontend/src');
-const distPath = env.production
-  ? '/var/www/html/'
-  : path.resolve(__dirname, 'frontend/dist');
+const distPath = path.resolve(__dirname, 'frontend/dist');
 
 module.exports = (env = {}) => {
   // Base config
@@ -47,7 +45,7 @@ module.exports = (env = {}) => {
     },
     output: {
       filename: '[name].bundle.js',
-      path: distPath,
+      path: env.production ? '/var/www/html/' : distPath,
       publicPath: '/'
     },
     plugins: [
