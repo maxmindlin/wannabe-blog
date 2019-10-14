@@ -20,6 +20,7 @@ const PostDisplay: React.FC<RouterProps> = ({ match }) => {
     fetchPost(match.params.id)
       .then(data => {
         console.log(data);
+        document.title = data.title;
         setState(prevState => ({ ...prevState, post: data }));
       })
       .catch(err => {

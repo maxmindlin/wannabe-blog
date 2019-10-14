@@ -6,7 +6,9 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const srcDir = path.resolve(__dirname, 'frontend/src');
-const distPath = path.resolve(__dirname, 'frontend/dist');
+const distPath = env.production
+  ? '/var/www/html/'
+  : path.resolve(__dirname, 'frontend/dist');
 
 module.exports = (env = {}) => {
   // Base config
