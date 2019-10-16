@@ -2,6 +2,7 @@
 #![feature(plugin)]
 use blog;
 use blog::posts;
+use blog::auth;
 
 use rocket::*;
 use rocket::{Request, Response};
@@ -45,5 +46,6 @@ fn main() {
         .manage(blog::init_pool())
         .mount("/", routes![index])
         .mount("/posts", posts::handlers::routes())
+        .mount("/auth", auth::handlers::routes())
         .launch();
 }

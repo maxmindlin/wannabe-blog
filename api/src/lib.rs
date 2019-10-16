@@ -8,6 +8,7 @@ extern crate serde_derive;
 
 pub mod posts;
 pub mod schema;
+pub mod auth;
 
 use diesel::pg::PgConnection;
 use dotenv::dotenv;
