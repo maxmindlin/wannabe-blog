@@ -10,6 +10,7 @@ const Home = () => {
   });
 
   useEffect(() => {
+    document.title = 'Wannabe blog';
     fetchAllPosts()
       .then(posts => setState(prevState => ({ ...prevState, posts })))
       .catch(err => console.warn(err));
@@ -32,7 +33,13 @@ const Home = () => {
       <span style={{ marginBottom: 20, fontSize: 20, textAlign: 'center' }}>
         Recent posts
       </span>
-      <div style={{ display: 'flex', justifySelf: 'center' }}>
+      <div
+        style={{
+          display: 'grid',
+          justifySelf: 'center',
+          gridTemplateColumns: '400px 400px'
+        }}
+      >
         {state.posts.map((p, i) => (
           <PostPreview key={i} post={p} />
         ))}

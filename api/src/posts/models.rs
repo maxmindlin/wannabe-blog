@@ -19,13 +19,13 @@ pub struct Post {
 }
 
 impl Post {
-    // Return all published posts
+    // Return all recent published posts
     pub fn all(conn: &PgConnection) -> Vec<Post> {
         posts
             .select((id, title, content, published, date_published, tags, preview))
             .filter(published.eq(true))
-            .order(id.desc())
-            .limit(5)
+            .order(date_published.desc())
+            .limit(4)
             .get_results::<Post>(conn)
             .expect("Error loading posts")
     }

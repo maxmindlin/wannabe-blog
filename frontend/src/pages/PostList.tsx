@@ -14,6 +14,7 @@ const PostList: React.FC<RouterProps> = ({ match }) => {
   });
 
   useEffect(() => {
+    document.title = `Search posts - ${match.params.tag}`;
     fetchAllTagPosts(match.params.tag)
       .then(posts => setState(prevState => ({ ...prevState, posts })))
       .catch(err => console.warn(err));

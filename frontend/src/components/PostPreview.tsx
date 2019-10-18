@@ -12,10 +12,7 @@ interface PostPreviewProps extends RouteComponentProps {
 }
 
 const PostPreview: React.FC<PostPreviewProps> = ({ post, history }) => (
-  <div
-    style={{ width: 'fit-content', display: 'grid' }}
-    className="postPreview"
-  >
+  <div style={{ margin: 10, display: 'grid' }} className="postPreview">
     <a
       href={`/posts/${post.id}`}
       style={{
