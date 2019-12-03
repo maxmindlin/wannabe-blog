@@ -1,1 +1,1 @@
-TODO: do it.
+Code for a blog site with a rust API backend + Typescript-React frontend. Walkthrough of frameworks + setup is done via posts on the site itself.
