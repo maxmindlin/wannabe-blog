@@ -35,7 +35,7 @@
     "@material-ui/core": "^3.9.1",
     "@material-ui/icons": "^3.0.2",
     "@types/react-syntax-highlighter": "^11.0.1",
-    "ajv": "6.10.1",
+    "ajv": "6.12.3",
     "axios": "^0.18.0",
     "cors": "^2.8.5",
     "dotenv-webpack": "^1.7.0",
